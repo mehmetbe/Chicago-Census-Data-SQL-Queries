@@ -3,34 +3,32 @@ SELECT * FROM CHICAGO_PUBLIC_SCHOOLS;
 SELECT * FROM CHICAGO_CRIME_DATA;
 
 
-#List the case number, type of crime and community area for all crimes in community area number 18.
+-- List the case number, type of crime and community area for all crimes in community area number 18.
 SELECT CR.CASE_NUMBER, CR.PRIMARY_TYPE, CE.COMMUNITY_AREA_NAME
 FROM CHICAGO_CRIME_DATA AS CR
 INNER JOIN CENSUS_DATA AS CE ON CR.COMMUNITY_AREA_NUMBER= CE.COMMUNITY_AREA_NUMBER
 WHERE CR.COMMUNITY_AREA_NUMBER= '18';
 
-#Write and execute a SQL query to list all crimes that took place at a school. 
+-- Write and execute a SQL query to list all crimes that took place at a school. 
 #Include case number, crime type and community name.
 SELECT CR.CASE_NUMBER, CR.PRIMARY_TYPE, CE.COMMUNITY_AREA_NAME, CR.LOCATION_DESCRIPTION
 FROM CHICAGO_CRIME_DATA AS CR
 LEFT OUTER JOIN CENSUS_DATA AS CE ON CR.COMMUNITY_AREA_NUMBER= CE.COMMUNITY_AREA_NUMBER
 WHERE CR.LOCATION_DESCRIPTION LIKE '%SCHOOL%';
 
-#Write and execute a SQL query to list all crimes that took place at 
-#Oakland, Armour Square, and Edgewater. Include case number, crime type and community name.
+-- Write and execute a SQL query to list all crimes that took place at Oakland, Armour Square, and Edgewater. Include case number, crime type and community name.
 SELECT CE.COMMUNITY_AREA_NUMBER, CR.CASE_NUMBER, CE.COMMUNITY_AREA_NAME
 FROM CHICAGO_CRIME_DATA AS CR
 FULL OUTER JOIN CENSUS_DATA AS CE ON CR.COMMUNITY_AREA_NUMBER= CE.COMMUNITY_AREA_NUMBER
 WHERE CE.COMMUNITY_AREA_NAME IN ('Oakland', 'Armour Square', 'Edgewater', 'CHICAGO');
 
-#Write and execute a SQL query to list the school names, community names and average attendance 
-#for communities with a hardship index of 98.
+-- Write and execute a SQL query to list the school names, community names and average attendance for communities with a hardship index of 98.
 SELECT SC.NAME_OF_SCHOOL, SC.COMMUNITY_AREA_NAME, SC.AVERAGE_STUDENT_ATTENDANCE
 FROM CHICAGO_PUBLIC_SCHOOLS AS SC
 LEFT OUTER JOIN CENSUS_DATA AS CE ON SC.COMMUNITY_AREA_NUMBER = CE.COMMUNITY_AREA_NUMBER
 WHERE CE.HARDSHIP_INDEX = '98';
 
-#Write and execute a SQL statement to create a view showing the columns listed (in the procedure)
+-- Write and execute a SQL statement to create a view showing the columns listed (in the procedure)
 CREATE VIEW ASDF (School_Name, Safety_Rating, Family_Rating, Environment_Rating, 
 Instruction_Rating, Leaders_Rating, Teachers_Rating) 
 as select NAME_OF_SCHOOL, Safety_Icon, Family_Involvement_Icon, Environment_Icon,
@@ -41,11 +39,9 @@ select * from ASDF;
 #Write and execute a SQL statement that returns just the school name and leaders rating from the view.
 select (School_Name),(Leaders_Rating) from ASDF;
 
-#Write the structure of a query to create or replace a 
-#stored procedure called UPDATE_LEADERS_SCORE that takes a 
-#in_School_ID parameter as an integer and a in_Leader_Score parameter as an integer. 
-#Don't forget to use the #SET TERMINATOR 
-#statement to use the @ for the CREATE statement terminator.
+-- Write the structure of a query to create or replace a stored procedure called UPDATE_LEADERS_SCORE that takes a 
+-- in_School_ID parameter as an integer and a in_Leader_Score parameter as an integer.
+
 --#SET TERMINATOR @
 CREATE PROCEDURE RETRIEVE       -- Name of this stored procedure routine
 
@@ -67,9 +63,9 @@ END
 @                                   -- Routine termination character
 
 
-#Inside your stored procedure, write a SQL statement to update the Leaders_Score field in the 
-#CHICAGO_PUBLIC_SCHOOLS table for the school identified by in_School_ID to the value 
-#in the in_Leader_Score parameter.
+-- Inside your stored procedure, write a SQL statement to update the Leaders_Score field in the CHICAGO_PUBLIC_SCHOOLS table 
+for the school identified by in_School_ID to the value in the in_Leader_Score parameter.
+
 DROP PROCEDURE UPDATE_LEADERS_SCORE;
 
 --#SET TERMINATOR @
@@ -110,8 +106,7 @@ BEGIN
 END
 @
 
-#Write and run one query to check that the updated stored procedure works as expected
-#when you use a valid score of 38 and invalid score of 101.
+-- Write and run one query to check that the updated stored procedure works as expected when you use a valid score of 38 and invalid score of 101.
 CALL UPDATE_LEADERS_SCORE (400018,38);
 CALL UPDATE_LEADERS_SCORE (400018,101);
 
