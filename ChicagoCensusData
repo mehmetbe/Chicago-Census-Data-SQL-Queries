@@ -9,8 +9,7 @@ FROM CHICAGO_CRIME_DATA AS CR
 INNER JOIN CENSUS_DATA AS CE ON CR.COMMUNITY_AREA_NUMBER= CE.COMMUNITY_AREA_NUMBER
 WHERE CR.COMMUNITY_AREA_NUMBER= '18';
 
--- Write and execute a SQL query to list all crimes that took place at a school. 
-#Include case number, crime type and community name.
+-- Write and execute a SQL query to list all crimes that took place at a school. Include case number, crime type and community name.
 SELECT CR.CASE_NUMBER, CR.PRIMARY_TYPE, CE.COMMUNITY_AREA_NAME, CR.LOCATION_DESCRIPTION
 FROM CHICAGO_CRIME_DATA AS CR
 LEFT OUTER JOIN CENSUS_DATA AS CE ON CR.COMMUNITY_AREA_NUMBER= CE.COMMUNITY_AREA_NUMBER
