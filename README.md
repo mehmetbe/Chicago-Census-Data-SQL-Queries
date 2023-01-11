@@ -14,3 +14,5 @@ https://data.cityofchicago.org/Education/Chicago-Public-Schools-Progress-Report-
 
 3-Chicago crime data
 This dataset reflects reported incidents of crime (with the exception of murders where data exists for each victim) that occurred in the City of Chicago from 2001 to present, minus the most recent seven days. A detailed description of this dataset and the original dataset can be obtained from the Chicago Data Portal at: https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2
+
+I used Joins statements, created a view, created a stored procedure, and used a transaction. Please refer to the Chicago Census Data file for the queries.
