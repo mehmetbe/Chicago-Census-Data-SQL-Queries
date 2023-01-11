@@ -1,6 +1,6 @@
 # SQL-Queries
 
-I worked with three datasets that are available on the City of Chicago’s Data Portal to run a number of SQL queries including Joins statements, creating a view, creating a stored procedure, and using a transaction. Description of the datasets are:
+I worked with three datasets that are available on the City of Chicago’s Data Portal to run a number of SQL queries including joins statements, creating a view, creating a stored procedure, and using a transaction. Description of the datasets are:
 
 1-Socioeconomic indicators in Chicago
 This dataset contains a selection of six socioeconomic indicators of public health significance and a “hardship index,” for each Chicago community area, for the years 2008 – 2012. A detailed description of this dataset and the original dataset can be obtained from the Chicago Data Portal at:
