@@ -1,7 +1,7 @@
 # SQL-Queries
 This repository includes the SQL queries that were written as part of requirements to obtain the IBM Data Science Professional Certificate. The description of each query is given as a comment in each file.
 
-Chicago Census Data:I worked with three datasets that are available on the City of Chicago’s Data Portal:
+Chicago Census Data: I worked with three datasets that are available on the City of Chicago’s Data Portal:
 
 1-Socioeconomic indicators in Chicago
 This dataset contains a selection of six socioeconomic indicators of public health significance and a “hardship index,” for each Chicago community area, for the years 2008 – 2012. A detailed description of this dataset and the original dataset can be obtained from the Chicago Data Portal at:
