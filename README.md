@@ -1,6 +1,6 @@
 # Chicago Census Data SQL Queries
 
-I worked with three datasets that are available on the City of Chicago’s Data Portal to run a number of SQL queries including joins statements, creating a view, creating a stored procedure, and using a transaction. Description of the datasets are:
+I worked with three datasets that are available on the City of Chicago’s Data Portal to run a number of SQL queries including join statements, creating a view, creating a stored procedure, and using a transaction. Description of the datasets are:
 
 1-Socioeconomic indicators in Chicago
 
